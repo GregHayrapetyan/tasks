@@ -5,10 +5,10 @@ import json
 import os
 import urllib.request
 
-with open('task_urls.json') as jsonUrls:
-    jsonData = json.load(jsonUrls)
-    jsonData2 = jsonData['items']
-    listUrls = [i['url'] for i in jsonData2]
+with open('task_urls.json') as json_urls:
+    json_data = json.load(json_urls)
+    json_data2 = json_data['items']
+    list_urls = [i['url'] for i in json_data2]
 
 t1 = time.perf_counter()
 os.mkdir('web_images')
@@ -27,7 +27,7 @@ def download_image(img_url):
         print('Connection is lost')
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
-    executor.map(download_image, listUrls)
+    executor.map(download_image, list_urls)
 if len(os.listdir('web_images')) == 0:
     os.rmdir('web_images')
 t2 = time.perf_counter()
