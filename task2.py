@@ -9,7 +9,6 @@ with open('task_urls.json') as json_urls:
     json_data = json.load(json_urls)
     json_data2 = json_data['items']
     list_urls = [i['url'] for i in json_data2]
-
 t1 = time.perf_counter()
 os.mkdir('web_images')
 def download_image(img_url):
