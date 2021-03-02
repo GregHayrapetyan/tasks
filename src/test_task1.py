@@ -1,7 +1,6 @@
 import unittest
 import filecmp
-from task1 import json_to_yaml_converter
-
+from task1 import *
 class Test_Converter(unittest.TestCase):
     def test_json_file(self):
         yaml_file = 'yaml_file_test'
